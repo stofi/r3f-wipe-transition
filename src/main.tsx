@@ -15,6 +15,8 @@ import Keymap from './keymap'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 function App() {
+  console.clear()
+
   const map = useMemo<KeyboardControlsEntry<TKeymap>[]>(
     () => [
       { name: Keymap.forward, keys: ['ArrowUp', 'w', 'W'] },

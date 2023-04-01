@@ -22,59 +22,63 @@ export default function Effects() {
     intensity,
     levels,
     radius,
-  } = useControls('Effects', {
-    enableBloom: {
-      value: false,
-      label: 'Bloom',
+  } = useControls(
+    'Effects',
+    {
+      enableBloom: {
+        value: false,
+        label: 'Bloom',
+      },
+      enableDepthOfField: {
+        value: false,
+        label: 'Depth of Field',
+      },
+      enableNoise: {
+        value: false,
+        label: 'Noise',
+      },
+      enableVignette: {
+        value: false,
+        label: 'Vignette',
+      },
+      enableCustomEffect: {
+        value: false,
+        label: 'Custom',
+      },
+      luminanceSmoothing: {
+        value: 0.5,
+        min: 0,
+        max: 1,
+        label: 'Smoothing',
+      },
+      luminanceThreshold: {
+        value: 0.1,
+        min: 0,
+        max: 2,
+        label: 'Threshold',
+      },
+      intensity: {
+        value: 0.5,
+        min: 0,
+        max: 10,
+        label: 'Intensity',
+      },
+      levels: {
+        value: 1,
+        min: 0,
+        max: 10,
+        step: 1,
+        label: 'Levels',
+      },
+      radius: {
+        value: 4,
+        min: 0,
+        max: 10,
+        label: 'Radius',
+      },
     },
-    enableDepthOfField: {
-      value: false,
-      label: 'Depth of Field',
-    },
-    enableNoise: {
-      value: false,
-      label: 'Noise',
-    },
-    enableVignette: {
-      value: false,
-      label: 'Vignette',
-    },
-    enableCustomEffect: {
-      value: false,
-      label: 'Custom',
-    },
-    luminanceSmoothing: {
-      value: 0.5,
-      min: 0,
-      max: 1,
-      label: 'Smoothing',
-    },
-    luminanceThreshold: {
-      value: 0.1,
-      min: 0,
-      max: 2,
-      label: 'Threshold',
-    },
-    intensity: {
-      value: 0.5,
-      min: 0,
-      max: 10,
-      label: 'Intensity',
-    },
-    levels: {
-      value: 1,
-      min: 0,
-      max: 10,
-      step: 1,
-      label: 'Levels',
-    },
-    radius: {
-      value: 4,
-      min: 0,
-      max: 10,
-      label: 'Radius',
-    },
-  })
+    { collapsed: true },
+  )
 
   return (
     <EffectComposer>

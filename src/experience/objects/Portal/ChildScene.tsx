@@ -23,7 +23,7 @@ const bottomMaterial = new THREE.MeshBasicMaterial({
 export interface ChildSceneAPI {
   hide: () => void
   show: () => void
-  scene: THREE.Scene | null
+  getScene: () => THREE.Scene | null
 }
 
 interface ChildSceneProps extends GroupProps {
@@ -49,7 +49,7 @@ const ChildScene = forwardRef<ChildSceneAPI, ChildSceneProps>(function Scene(
       if (groupRef.current) groupRef.current.visible = true
       active.current = true
     },
-    scene,
+    getScene: () => scene,
   }))
 
   useFrame(() => {
@@ -64,9 +64,9 @@ const ChildScene = forwardRef<ChildSceneAPI, ChildSceneProps>(function Scene(
   return createPortal(
     <>
       <Environment
-        frames={Infinity}
+        // frames={Infinity}
         background={false}
-        // frames={1}
+        frames={1}
         near={1}
         far={1000}
         resolution={1024 / 4}

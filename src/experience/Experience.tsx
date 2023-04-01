@@ -25,8 +25,8 @@ export default function Experience(props: { enableDebug?: boolean }) {
         <color args={['lightblue']} attach='background' />
         {props.enableDebug && (
           <>
-            <axesHelper args={[5]} />
-            <Perf position='top-left' />
+            {/* <axesHelper args={[5]} /> */}
+            <Perf position='top-left' minimal />
             <PerformanceMonitor />
           </>
         )}
